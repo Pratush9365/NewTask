@@ -41,31 +41,15 @@ export default function LoginScreen({navigation}) {
     setloading(true);
 
     try {
-      const resultAction = await dispatch(
-        Authentication({email: email, password: password}),
-      );
-      console.log('resultAction', resultAction);
-      Toast.show({
-        type: 'success',
-        text1: strings.loginSuccessTitle,
-        text2: 'Welcome back!',
-        topOffset: 40,
-        position: 'top',
-      });
-      console.log('resultAction', resultAction);
-      if (resultAction?.statusCode === 200)
-        // navigation.replace(screenNames.DRAWER_TAB);
-        console.log('>>>>>>', resultAction);
-      else {
+      const result = await dispatch(Authentication({email, password})).unwrap();
+      if (result && result.access_token) {
         Toast.show({
-          type: 'error',
-          text1: strings.errorTitle,
-          text2: resultAction?.payload || error,
-          topOffset: 40,
-          position: 'top',
+          type: 'success',
+          text1: 'Login Successful',
+          text2: 'Welcome back!',
         });
+        navigation.replace(screenNames.DRAWER_TAB);
       }
-      setloading(false);
     } catch (error) {
       setTimeout(() => {
         Toast.show({
@@ -117,33 +101,33 @@ export default function LoginScreen({navigation}) {
           {error ? <Text style={styles.errorText}>{error}</Text> : null}
 
           <Text style={styles.Texts}>{strings.passwordLabel}</Text>
-
-          <TextInput
-            placeholder={strings.passwordPlaceholder}
-            value={password}
-            onChangeText={text => {
-              setPassword(text);
-              if (text.length < 8) {
-                setPasswordError(strings.invalidPassword);
-              } else {
-                setPasswordError('');
-              }
-            }}
-            secureTextEntry={!showPassword}
-            style={[styles.input, passwordError ? styles.errorborder : null]}
-          />
-
+          <View>
+            <TextInput
+              placeholder={strings.passwordPlaceholder}
+              value={password}
+              onChangeText={text => {
+                setPassword(text);
+                if (text.length < 8) {
+                  setPasswordError(strings.invalidPassword);
+                } else {
+                  setPasswordError('');
+                }
+              }}
+              secureTextEntry={!showPassword}
+              style={[styles.input, passwordError ? styles.errorborder : null]}
+            />
+            <TouchableOpacity
+              onPress={() => setShowPassword(!showPassword)}
+              hitSlop={{top: 12, right: 12, bottom: 12, left: 12}}>
+              <Image
+                source={showPassword ? icons.passwordSeen : icons.eyeOffIcon}
+                style={styles.passwordicon}
+              />
+            </TouchableOpacity>
+          </View>
           {passwordError ? (
             <Text style={styles.errorText}>{passwordError}</Text>
           ) : null}
-          <TouchableOpacity
-            onPress={() => setShowPassword(!showPassword)}
-            hitSlop={{top: 12, right: 12, bottom: 12, left: 12}}>
-            <Image
-              source={showPassword ? icons.passwordSeen : icons.eyeOffIcon}
-              style={styles.passwordicon}
-            />
-          </TouchableOpacity>
 
           {loading && (
             <View style={styles.overlay}>

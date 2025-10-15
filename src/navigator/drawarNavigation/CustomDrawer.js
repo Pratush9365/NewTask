@@ -8,6 +8,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 import {logout} from '../../redux/slice/login';
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
+import {persistor} from '../../redux/store';
 
 const CustomDrawer = ({navigation}) => {
   const rootNavigation = useNavigation();
@@ -109,7 +110,7 @@ const CustomDrawer = ({navigation}) => {
                 },
                 {
                   text: strings.yes,
-                  onPress: async () => {
+                  onPress: () => {
                     try {
                       dispatch(logout());
                       navigation.closeDrawer();
@@ -117,7 +118,7 @@ const CustomDrawer = ({navigation}) => {
                     } catch (err) {
                       setError(err);
                     }
-                  },
+                  }, //when You are using a  persist in the store so clean the value in that you have to use that to clear the Token null. (//persistor.purge();)
                 },
               ])
             }>
