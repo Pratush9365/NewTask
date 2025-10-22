@@ -1,15 +1,15 @@
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import accountScreen from '../../screens/account/index.js';
-import shopScreen from '../../screens/shop/index.js';
-import scheduleScreen from '../../screens/schedule/index.js';
-import remainderScreen from '../../screens/remainder/index.js';
-import notificationScreen from '../../screens/notification/index.js';
-import cartScreen from '../../screens/cart/index.js';
 import CustomDrawer from './CustomDrawer';
 import 'react-native-gesture-handler';
-import detailsScreen from '../../screens/details/index.js';
 import {screenNames} from '../../utils/screenNames.js';
 import BottomTabNavigation from '../bottomTabNavigation/index.js';
+import ShopScreen from '../../screens/shop/index.js';
+import ScheduleScreen from '../../screens/schedule/index.js';
+import RemainderScreen from '../../screens/remainder/index.js';
+import AccountScreen from '../../screens/account/index.js';
+import NotificationScreen from '../../screens/notification/index.js';
+import CartScreen from '../../screens/cart/index.js';
+import ProductDetailsScreen from '../../screens/productDetail/index.js';
 
 const Drawer = createDrawerNavigator();
 
@@ -27,7 +27,7 @@ export default function DrawarNavigation() {
       />
       <Drawer.Screen
         name={screenNames.SHOP}
-        component={shopScreen}
+        component={ShopScreen}
         options={{
           title: 'Shop',
           headerShown: true,
@@ -35,7 +35,7 @@ export default function DrawarNavigation() {
       />
       <Drawer.Screen
         name={screenNames.SECHDULE}
-        component={scheduleScreen}
+        component={ScheduleScreen}
         options={{
           title: 'Schedule',
           headerShown: true,
@@ -43,7 +43,7 @@ export default function DrawarNavigation() {
       />
       <Drawer.Screen
         name={screenNames.Remainder}
-        component={remainderScreen}
+        component={RemainderScreen}
         options={{
           title: 'Reminder',
           headerShown: true,
@@ -51,7 +51,7 @@ export default function DrawarNavigation() {
       />
       <Drawer.Screen
         name={screenNames.ACCOUNT}
-        component={accountScreen}
+        component={AccountScreen}
         options={{
           title: 'My Account',
           headerShown: true,
@@ -59,7 +59,7 @@ export default function DrawarNavigation() {
       />
       <Drawer.Screen
         name={screenNames.NOTIFICATION}
-        component={notificationScreen}
+        component={NotificationScreen}
         options={{
           title: 'Notifications',
           headerShown: true,
@@ -67,7 +67,7 @@ export default function DrawarNavigation() {
       />
       <Drawer.Screen
         name={screenNames.CART}
-        component={cartScreen}
+        component={CartScreen}
         options={{
           title: 'Cart',
           headerShown: true,
@@ -75,7 +75,7 @@ export default function DrawarNavigation() {
       />
       <Drawer.Screen
         name={screenNames.DETAILS}
-        component={detailsScreen}
+        component={ProductDetailsScreen}
         options={{
           title: 'Details',
           headerShown: true,

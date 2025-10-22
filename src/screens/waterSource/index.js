@@ -28,7 +28,7 @@ import strings from '../../utils/strings';
 import siteId from '../../service/api/siteId';
 import {screenNames} from '../../utils/screenNames';
 
-const waterSourceScreen = () => {
+const WaterSourceScreen = () => {
   const navigation = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);
   const [searchText, setSearchText] = useState('');
@@ -193,7 +193,7 @@ const waterSourceScreen = () => {
           <TouchableOpacity
             style={styles.searchText}
             onPress={() =>
-              navigation.navigate(screenNames.Search_Screen, {
+              navigation.navigate(screenNames.SEARCH_SCREEN, {
                 waterdata: waterTypes,
               })
             }>
@@ -263,4 +263,4 @@ const waterSourceScreen = () => {
   );
 };
 
-export default waterSourceScreen;
+export default WaterSourceScreen;

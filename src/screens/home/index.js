@@ -16,7 +16,6 @@ import {Washbook, Washes, giftCards, memberships} from './utils/staticData';
 import strings from '../../utils/strings';
 import {icons, Images} from '../../assets';
 import {screenNames} from '../../utils/screenNames';
-import {openDrawer} from '../../navigator/globalNavigation/serviceNavigation';
 export default function HomeScreen({navigation}) {
   const drawerNavigation = useNavigation();
   const flatListRef = useRef(null);

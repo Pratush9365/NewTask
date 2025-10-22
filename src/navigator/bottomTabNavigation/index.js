@@ -1,13 +1,12 @@
-import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Image} from 'react-native';
-import HomeScreen from '../../screens/home';
-import accountScreen from '../../screens/account';
-import favoriteScreen from '../../screens/favorites';
 import {Images} from '../../assets';
-import MenuStackNavigator from '../stackNavigation/tab+stackNavgation';
 import colors from '../../utils/colors';
 import {screenNames} from '../../utils/screenNames';
+import HomeScreen from '../../screens/home';
+import AccountScreen from '../../screens/account';
+import FavoriteScreen from '../../screens/favorites';
+import MenuStackNavigator from '../stackNavigation/tab+stackNavgation';
 
 const Tab = createBottomTabNavigator();
 
@@ -34,7 +33,7 @@ export default function BottomTabNavigation() {
 
       <Tab.Screen
         name={screenNames.ACCOUNT}
-        component={accountScreen}
+        component={AccountScreen}
         options={{
           title: 'Account',
           tabBarIcon: () => (
@@ -47,7 +46,7 @@ export default function BottomTabNavigation() {
       />
       <Tab.Screen
         name={screenNames.FAVORITE}
-        component={favoriteScreen}
+        component={FavoriteScreen}
         options={{
           title: 'FAVORITE',
           tabBarIcon: () => (

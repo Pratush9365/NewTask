@@ -135,4 +135,10 @@ export default {
   yes: 'Yes',
   //Search Screen String
   searchText: 'Search Name',
+  // Menu Screen String
+  chemiaclInventory: 'Chemical Inventory',
+  waterSource: 'Water Source',
+  AquaLabSystem: 'Aqua-Lab System',
+  location: 'Location',
+  PBA2: 'PBA2',
 };

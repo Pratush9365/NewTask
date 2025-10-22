@@ -12,7 +12,7 @@ import {
 import {Images, icons} from '../../assets';
 import styles from './styles';
 import Toast from 'react-native-toast-message';
-import {useSelector, useDispatch} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {Authentication, Email, Password} from '../../redux/slice/login';
 import strings from '../../utils/strings';
 import {screenNames} from '../../utils/screenNames';
@@ -23,7 +23,6 @@ export default function LoginScreen({navigation}) {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
-  const [buttonDisabled, setButtonDisabled] = useState(false);
   const [loading, setloading] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
 
@@ -37,7 +36,7 @@ export default function LoginScreen({navigation}) {
       Alert.alert(strings.errorTitle, strings.passwordTooShort);
       return;
     }
-    setButtonDisabled(true);
+
     setloading(true);
 
     try {
@@ -55,12 +54,11 @@ export default function LoginScreen({navigation}) {
         Toast.show({
           type: 'error',
           text1: strings.errorTitle,
-          text2: error?.message || error,
+          text2: error?.message,
           topOffset: 40,
           position: 'top',
         });
         setloading(false);
-        setButtonDisabled(false);
       }, 3000);
     }
   };
@@ -142,9 +140,7 @@ export default function LoginScreen({navigation}) {
           <TouchableOpacity
             style={[
               styles.loginBtn,
-              isFormValid && !buttonDisabled
-                ? styles.Visible
-                : styles.notVisible,
+              isFormValid && !loading ? styles.Visible : styles.notVisible,
             ]}
             onPress={handleLogin}
             disabled={!isFormValid}>

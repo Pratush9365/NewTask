@@ -34,7 +34,7 @@ const slides = [
   },
 ];
 
-export default function Onboarding() {
+export default function OnBoarding() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const navigation = useNavigation();
   const flatListRef = useRef(null);

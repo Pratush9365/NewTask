@@ -47,7 +47,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   modalText: {
-    fontWeight: 600,
     fontSize: 20,
     color: colors.Blue_green,
     fontFamily: fonts.SEMI,
@@ -87,7 +86,6 @@ const styles = StyleSheet.create({
   title: {
     marginTop: 64,
     fontSize: 24,
-    // fontWeight: "700",
     fontFamily: fonts.BOLD,
     marginBottom: 10,
   },
@@ -96,7 +94,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: colors.Blue_green,
     marginBottom: 20,
-    fontWeight: '400',
     fontFamily: fonts.REGULAR,
     lineHeight: 26,
   },
@@ -139,7 +136,6 @@ const styles = StyleSheet.create({
   verifyText: {
     color: '#fff',
     fontSize: 16,
-    fontWeight: '600',
     fontFamily: fonts.REGULAR,
   },
 });

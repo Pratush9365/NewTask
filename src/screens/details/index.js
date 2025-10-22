@@ -11,7 +11,7 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import {screenNames} from '../../utils/screenNames';
 
-const detailsScreen = () => {
+const UserDetails = () => {
   const dispatch = useDispatch();
   const data = useSelector(state => state.userdata);
 
@@ -157,4 +157,4 @@ const detailsScreen = () => {
   );
 };
 
-export default detailsScreen;
+export default UserDetails;

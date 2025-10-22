@@ -43,14 +43,12 @@ export const Authentication = createAsyncThunk(
 const AuthenticationSlice = createSlice({
   name: 'Authentication',
   initialState: {
-    user: null,
     token: null,
     loading: 'idle',
     error: null,
   },
   reducers: {
     logout: state => {
-      state.user = null;
       state.token = null;
       state.loading = 'idle';
       state.error = null;
@@ -66,11 +64,6 @@ const AuthenticationSlice = createSlice({
 
         if (action.payload) {
           state.token = action.payload.access_token;
-          state.user = {
-            id: action.payload.user_id,
-            tenant: action.payload.tenant_id,
-            type: action.payload.user_type,
-          };
         }
       })
       .addCase(Authentication.rejected, (state, action) => {

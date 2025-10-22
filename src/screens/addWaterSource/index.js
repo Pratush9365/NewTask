@@ -60,7 +60,6 @@ const AddWaterSource = () => {
         },
         water_cost: Cost.replace(/\$/g, ''),
       };
-      // console.log("Payload:",payload);
 
       let response;
       if (route.params?.editData) {
@@ -102,10 +101,13 @@ const AddWaterSource = () => {
 
   const fetchWaterTypes = async () => {
     setLoading(true);
+    const payload = {
+      site_id: '42528f47-b0c5-4080-ae5a-069fda791a3f',
+    };
     try {
-      const response = await getWaterTypeList();
+      const response = await getWaterTypeList(payload);
       if (response) {
-        setWaterTypes(response || []);
+        setWaterTypes(response);
         setLoading(false);
       }
     } catch (err) {

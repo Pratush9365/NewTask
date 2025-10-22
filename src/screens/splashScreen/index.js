@@ -5,9 +5,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from './styles';
 import {Images} from '../../assets';
 import {screenNames} from '../../utils/screenNames';
+import {useSelector} from 'react-redux';
 
 function SplashScreen() {
   const navigation = useNavigation();
+
+  const token = useSelector(state => state.Authentication?.token);
 
   useEffect(() => {
     const checkAuthAndOnboarding = async () => {
@@ -17,10 +20,12 @@ function SplashScreen() {
         );
 
         setTimeout(() => {
-          if (hasSeenOnboarding) {
-            navigation.replace(screenNames.LOGIN);
-          } else {
+          if (!hasSeenOnboarding) {
             navigation.replace(screenNames.ONBOARDING);
+          } else if (token) {
+            navigation.replace(screenNames.DRAWER_TAB);
+          } else {
+            navigation.replace(screenNames.LOGIN);
           }
         }, 2000);
       } catch (error) {
@@ -29,7 +34,7 @@ function SplashScreen() {
     };
 
     checkAuthAndOnboarding();
-  }, [navigation]);
+  }, [token, navigation]);
 
   return (
     <View style={styles.root}>

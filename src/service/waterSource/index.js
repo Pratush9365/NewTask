@@ -21,6 +21,7 @@ const getWaterTypeList = async queryParams => {
     // if (response?.statusCode !== HTTP_ERROR_CODES.MAINTENANCE) {
     // //   showErrorToast(response?.message)
     // }
+    console.log('Response', response);
     throw new AppError(
       response?.message ?? 'getWaterTypeList get failed',
       response?.statusCode,
