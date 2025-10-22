@@ -71,7 +71,8 @@ const WaterSourceScreen = () => {
       setWaterTypes(data);
       console.log(data);
     } catch (err) {
-      setError(err.message || strings.generalError);
+      console.log('error', err);
+      setError(strings.generalError);
     } finally {
       setLoading(false);
     }
@@ -236,7 +237,7 @@ const WaterSourceScreen = () => {
       <View style={styles.floatingIcon}>
         <TouchableOpacity
           style={styles.floatingButton}
-          onPress={() => navigation.navigate('addWaterSource')}>
+          onPress={() => navigation.navigate(screenNames.ADD_WATER_SOURCE)}>
           <Image source={Images.waterSourceAddIcon} style={styles.addIcon} />
         </TouchableOpacity>
       </View>

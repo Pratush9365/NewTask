@@ -66,12 +66,12 @@ const getWaterSourceList = async queryParams => {
     // if (response?.statusCode !== HTTP_ERROR_CODES.MAINTENANCE) {
     // //   showErrorToast(response?.message)
     // }
-    throw new AppError(
-      response?.message ?? 'getWaterSourceList get failed',
-      response?.statusCode,
-      response,
-      response?.message,
-    );
+    // throw new AppError(
+    //   response?.message ?? 'getWaterSourceList get failed',
+    //   response?.statusCode,
+    //   response,
+    //   response?.message,
+    // );
   }
 };
 
