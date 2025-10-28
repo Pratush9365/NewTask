@@ -1,13 +1,4 @@
-import React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  Image,
-  StatusBar,
-  Pressable,
-} from 'react-native';
+import {View, Text, TouchableOpacity, Image, Pressable} from 'react-native';
 import {icons} from '../assets';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import styles from './styles';

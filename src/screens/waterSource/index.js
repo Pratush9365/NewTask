@@ -25,7 +25,6 @@ import SortByModal from '../../components/modals/sortModal/index';
 import SiteModal from '../../components/modals/siteModal/index';
 import styles from '../waterSource/styles';
 import strings from '../../utils/strings';
-import siteId from '../../service/api/siteId';
 import {screenNames} from '../../utils/screenNames';
 
 const WaterSourceScreen = () => {
@@ -69,10 +68,8 @@ const WaterSourceScreen = () => {
         sort_by: sortMap[selectedSort] || 3,
       });
       setWaterTypes(data);
-      console.log(data);
     } catch (err) {
-      console.log('error', err);
-      setError(strings.generalError);
+      setError(err.message);
     } finally {
       setLoading(false);
     }

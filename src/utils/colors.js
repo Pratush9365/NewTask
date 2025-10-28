@@ -29,4 +29,8 @@ export default {
   red: 'red',
   bluebeff: '#3181beff',
   whiteFFF: '#D9EFFF',
+  black055: '#555',
+  grayA0: '#A0A0A0',
+  black: '#0000',
+  black777: '#777',
 };

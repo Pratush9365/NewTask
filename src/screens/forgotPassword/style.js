@@ -4,7 +4,11 @@ import colors from '../../utils/colors';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f0eeeeff',
+    backgroundColor: colors.white,
+  },
+  modalHeader: {
+    justifyContent: 'flex-end',
+    margin: 0,
   },
   container1: {
     justifyContent: 'center',

@@ -10,7 +10,7 @@ import {useSelector} from 'react-redux';
 function SplashScreen() {
   const navigation = useNavigation();
 
-  const token = useSelector(state => state.Authentication?.token);
+  const token = useSelector(state => state.authentication?.token);
 
   useEffect(() => {
     const checkAuthAndOnboarding = async () => {

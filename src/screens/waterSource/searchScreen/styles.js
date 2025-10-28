@@ -1,6 +1,7 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 import colors from '../../../utils/colors';
 import fonts from '../../../assets/fonts';
+const dimenions = Dimensions.get('screen');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -28,6 +29,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     flex: 1,
   },
+  cardItem: {
+    marginTop: 40,
+  },
   emptyStateContainer: {
     flex: 1,
     marginBottom: 70,
@@ -35,18 +39,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   cloudImage: {
-    width: 180,
-    height: 150,
+    width: 0.41 * dimenions.width,
+    height: 0.16 * dimenions.height,
   },
   title: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#000',
+    color: colors.black,
   },
   subtitle: {
     marginTop: 4,
     fontSize: 14,
-    color: '#777',
+    color: colors.black777,
   },
   waterSourceCard: {
     marginHorizontal: 16,

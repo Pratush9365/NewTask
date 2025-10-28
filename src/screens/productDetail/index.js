@@ -3,6 +3,7 @@ import {View, Text, Image, TouchableOpacity} from 'react-native';
 import {FlatList, Pressable} from 'react-native-gesture-handler';
 import styles from './styles';
 import {icons, Images} from '../../assets';
+import {screenNames} from '../../utils/screenNames';
 export default function ProductDetailsScreen({route}) {
   const {item1, cartItems} = route.params;
   const cartcount = cartItems.find(item => item.id === item1.id)?.quantity || 0;
@@ -128,7 +129,6 @@ that if we build our culture on an inclusive.`,
               <Image source={icons.backIcon} style={{width: 24, height: 24}} />
             </Pressable>
           </View>
-
           <Text style={styles.headerStyle}>Detail</Text>
 
           <View style={{width: 40}} />
@@ -145,7 +145,7 @@ that if we build our culture on an inclusive.`,
         {cartcount === 0 ? (
           <TouchableOpacity
             style={styles.button}
-            onPress={() => navigation.navigate('Cart')}>
+            onPress={() => navigation.navigate(screenNames.CART)}>
             <View style={{justifyContent: 'center', alignItems: 'center'}}>
               <Text style={styles.buttonText}>Add To Cart</Text>
             </View>
@@ -153,7 +153,7 @@ that if we build our culture on an inclusive.`,
         ) : (
           <TouchableOpacity
             style={styles.button}
-            onPress={() => navigation.navigate('Cart')}>
+            onPress={() => navigation.navigate(screenNames.CART)}>
             <View style={{justifyContent: 'center', alignItems: 'center'}}>
               <Text style={styles.buttonText}>Go To Cart</Text>
             </View>

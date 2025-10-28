@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
+    marginTop: 33,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
   },
   headerStyle: {
     fontSize: 18,
-    color: '#152D40',
+    color: colors.Blue_green,
     fontFamily: fonts.SEMI,
   },
   icon: {
@@ -40,10 +41,10 @@ const styles = StyleSheet.create({
   },
   section: {
     marginTop: 16,
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     borderRadius: 16,
     padding: 6,
-    shadowColor: '#000',
+    shadowColor: colors.blackF6,
     shadowOpacity: 0.08,
     shadowRadius: 6,
     elevation: 4,
@@ -76,7 +77,6 @@ const styles = StyleSheet.create({
   badge: {
     backgroundColor: colors.paleBlue,
     color: colors.MediumBlue,
-    fontWeight: '600',
     fontSize: 12,
     paddingHorizontal: 12,
     paddingVertical: 6,
@@ -86,7 +86,6 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    fontWeight: '600',
     color: colors.Blue_green,
     marginTop: 12,
     fontFamily: fonts.SEMI,
@@ -99,7 +98,6 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 12,
-    fontWeight: '600',
     color: colors.Blue_green,
     marginTop: 12,
     fontFamily: fonts.SEMI,
@@ -107,7 +105,7 @@ const styles = StyleSheet.create({
   price: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#152D40',
+    color: colors.Blue_green,
     marginTop: 4,
     fontFamily: fonts.BOLD,
   },
@@ -123,7 +121,6 @@ const styles = StyleSheet.create({
   },
   redeemText: {
     fontSize: 14,
-    fontWeight: '500',
     color: colors.Blue_green,
     flex: 1,
     fontFamily: fonts.REGULAR,
@@ -137,7 +134,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginleft: 10,
     fontSize: 14,
-    fontWeight: '600',
     color: colors.Blue_green,
     marginBottom: 16,
     rowGap: 18,
@@ -146,7 +142,6 @@ const styles = StyleSheet.create({
 
   row: {
     flexDirection: 'row',
-    //  alignItems: "center",
     width: '43%',
     marginBottom: 16,
     paddingHorizontal: 2,
@@ -168,14 +163,11 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 16,
     color: colors.Blue_green,
-    fontWeight: '400',
-    lineHeight: 31,
     fontFamily: fonts.MEDIUM,
   },
   text1: {
     fontSize: 14,
     color: colors.Blue_green,
-    lineHeight: 21,
     fontFamily: fonts.SEMI,
   },
 

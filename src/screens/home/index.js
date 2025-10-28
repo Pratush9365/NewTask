@@ -17,12 +17,10 @@ import strings from '../../utils/strings';
 import {icons, Images} from '../../assets';
 import {screenNames} from '../../utils/screenNames';
 export default function HomeScreen({navigation}) {
-  const drawerNavigation = useNavigation();
   const flatListRef = useRef(null);
   const [selectedId, setSelectedId] = useState(1);
   const [visible, setVisible] = useState(false);
   const [cartItems, setCartItems] = useState([]);
-  const [showDynamicData, setShowDynamicData] = useState(false);
 
   const Slide = [
     {id: 1, title: strings.membership},
@@ -56,7 +54,6 @@ export default function HomeScreen({navigation}) {
       ]}
       onPress={() => {
         setSelectedId(item.id);
-        setShowDynamicData(true);
       }}>
       <Text
         style={[
@@ -91,7 +88,7 @@ export default function HomeScreen({navigation}) {
       <View style={styles.card}>
         <Pressable
           onPress={() =>
-            navigation.navigate(screenNames.PRODUCT_DETAILS, {
+            navigation.navigate(screenNames.DETAILS_SCREEN, {
               item1: item,
               cartItems: cartItems,
               feature: item.features,
@@ -225,7 +222,7 @@ export default function HomeScreen({navigation}) {
         renderItem={renderItem1}
         contentContainerStyle={{padding: 16}}
       />
-      <FilterModal Modalvisible={visible} SetModalVisible={setVisible} />
+      <FilterModal modalVisible={visible} setModalVisible={setVisible} />
     </View>
   );
 }

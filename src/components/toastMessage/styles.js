@@ -1,11 +1,13 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 import colors from '../../utils/colors';
+import fonts from '../../assets/fonts';
 
+const screenDimension = Dimensions.get('screen');
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     backgroundColor: colors.ToastBackgroundColors,
-    width: 390,
+    width: 0.9 * screenDimension.width,
     height: 64,
     borderRadius: 12,
     paddingTop: 12,
@@ -25,14 +27,12 @@ const styles = StyleSheet.create({
   },
   text1: {
     color: colors.white,
-    fontWeight: '700',
-    fontFamily: 'Bold',
+    fontFamily: fonts.BOLD,
     fontSize: 16,
   },
   text2: {
-    color: '#fff',
-    fontWeight: '500',
-    fontFamily: 'Medium',
+    color: colors.white,
+    fontFamily: fonts.MEDIUM,
     fontSize: 12,
     lineHeight: 16,
   },

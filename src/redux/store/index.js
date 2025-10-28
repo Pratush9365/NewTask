@@ -73,23 +73,21 @@
 
 import {configureStore, combineReducers} from '@reduxjs/toolkit';
 import userdata from '../slice/crud';
-import AuthenticationReducer from '../slice/login';
+import authenticationReducer from '../slice/login';
 import apiDataReducer from '../slice/asyncOperation';
-import waterSourceReducer from '../slice/waterSource';
 import logger from 'redux-logger';
 import {persistStore, persistReducer} from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const authPersistConfig = {
-  key: 'Authentication',
+  key: 'authentication',
   storage: AsyncStorage,
   whitelist: ['token'],
 };
 const rootReducer = combineReducers({
   userdata,
-  Authentication: persistReducer(authPersistConfig, AuthenticationReducer),
+  authentication: persistReducer(authPersistConfig, authenticationReducer),
   apiData: apiDataReducer,
-  waterSource: waterSourceReducer,
 });
 
 export const store = configureStore({

@@ -29,10 +29,6 @@ const $http = axios.create({
 });
 console.log('http', $http);
 
-const storeNew = store.getState();
-
-const token = storeNew.Authentication.token;
-
 // console.log('token', token);
 
 // console.log('objectobject', token);
@@ -57,6 +53,8 @@ $http.interceptors.request.use(
 
     //      const isBasicTokenRequired = BASIC_AUTH_ENDPOINTS.includes(endpoint)
 
+    const storeNew = store.getState();
+    const token = storeNew.authentication.token;
     if (token) {
       // Logged in → Use Bearer token
       config.headers.Authorization = `Bearer ${token}`;

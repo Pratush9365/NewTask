@@ -1,34 +1,35 @@
-import { StyleSheet } from "react-native";
-import fonts from "../../assets/fonts";
-import colors from "../../utils/colors";
+import {StyleSheet} from 'react-native';
+import fonts from '../../assets/fonts';
+import colors from '../../utils/colors';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroungcolor: colors.lightShadeBlue
+    backgroungcolor: colors.lightShadeBlue,
   },
   labelText: {
     fontFamily: fonts.MEDIUM,
     fontSize: 11,
-    color: colors.gray07D
+    color: colors.gray07D,
   },
   contentContainer: {
     flex: 1,
-    justifyContent: "flex-start",
+    justifyContent: 'flex-start',
     marginTop: 20,
     marginHorizontal: 16,
-  },textInputStyle4:{
-flex: 1, 
-marginLeft: 16 
+  },
+  textInputStyle4: {
+    flex: 1,
+    marginLeft: 16,
   },
   selectedText: {
     fontSize: 16,
     marginTop: 6,
     fontFamily: fonts.MEDIUM,
-    color: colors.blackf5f
+    color: colors.blackf5f,
   },
   selectBox: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     paddingTop: 18,
     paddingBottom: 18,
     paddingLeft: 16,
@@ -37,8 +38,8 @@ marginLeft: 16
     borderRadius: 8,
   },
   selectBox1: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     paddingTop: 10,
     paddingBottom: 10,
     paddingLeft: 16,
@@ -48,8 +49,8 @@ marginLeft: 16
   },
   costBox: {
     marginTop: 16,
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     paddingTop: 18,
     paddingBottom: 18,
     paddingLeft: 16,
@@ -68,7 +69,8 @@ marginLeft: 16
     fontSize: 12,
     fontFamily: fonts.MEDIUM,
     color: colors.gray3BA,
-  },textInputStyle2:{
+  },
+  textInputStyle2: {
     flex: 1,
     fontSize: 16,
     fontFamily: fonts.MEDIUM,
@@ -84,30 +86,29 @@ marginLeft: 16
     height: 24,
   },
   saveButton: {
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     paddingHorizontal: 163.5,
     paddingVertical: 16,
     borderRadius: 8,
     backgroundColor: colors.MediumBlue,
   },
   saveButtonText: {
-    fontSize:14,
+    fontSize: 14,
     color: colors.white,
     fontFamily: fonts.SEMI,
   },
   footer: {
     justifyContent: 'flex-end',
-    marginBottom: 40
+    marginBottom: 40,
   },
   overlay: {
-    flex:1,
+    flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
- 
 });
- export const styless = StyleSheet.create({
+export const styless = StyleSheet.create({
   modalContainer: {
     flex: 0.4,
     backgroundColor: colors.white,
@@ -117,10 +118,14 @@ marginLeft: 16
     paddingVertical: 24,
   },
   modalHeader: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     marginBottom: 8,
+  },
+  modalHeader1: {
+    margin: 0,
+    justifyContent: 'flex-end',
   },
   modalTitleSection: {
     flex: 1,
@@ -131,8 +136,8 @@ marginLeft: 16
     color: colors.blackf5f,
   },
   closeButton: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: 8,
   },
   closeButtonIcon: {
@@ -141,7 +146,7 @@ marginLeft: 16
     tintColor: colors.BlackColor5F,
   },
   siteItem: {
-    paddingVertical:20,
+    paddingVertical: 20,
     borderBottomWidth: 4,
     borderBottomColor: colors.blackF6,
   },
@@ -152,12 +157,11 @@ marginLeft: 16
   },
   loaderContainer: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  closeButtonText: { 
+  closeButtonText: {
     width: 10,
     height: 10,
-   },
+  },
 });
-

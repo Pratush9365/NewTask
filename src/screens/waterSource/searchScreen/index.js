@@ -73,10 +73,7 @@ const SearchScreen = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar
-        barStyle="dark-content"
-        backgroundColor={colors.lightBlue || '#E6EDF3'}
-      />
+      <StatusBar barStyle="dark-content" backgroundColor={colors.lightBlue} />
 
       <View style={styles.searchBarContainer}>
         <View style={styles.searchBar}>
@@ -85,7 +82,7 @@ const SearchScreen = () => {
           </TouchableOpacity>
           <TextInput
             placeholder={strings.searchText}
-            placeholderTextColor="#A0A0A0"
+            placeholderTextColor={colors.grayA0}
             style={styles.input}
             value={searchText}
             onChangeText={setSearchText}
@@ -94,7 +91,7 @@ const SearchScreen = () => {
       </View>
 
       {loading ? (
-        <View>
+        <View style={styles.cardItem}>
           <FlatList
             data={apiData}
             keyExtractor={item => item.id.toString()}

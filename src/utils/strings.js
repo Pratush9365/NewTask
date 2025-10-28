@@ -33,6 +33,7 @@ export default {
   saveFailedMessage: 'Unable to save water source',
   errorTitle: 'Error',
   errorMessage: 'Failed to save',
+  errorMessage1: 'Please Check User Name And Password',
   fetchError: 'Failed to fetch data',
   noWaterTypeTitle: 'No Water Types Found',
   noWaterTypeMessage: 'Please try again later or refresh the page.',
@@ -141,4 +142,8 @@ export default {
   AquaLabSystem: 'Aqua-Lab System',
   location: 'Location',
   PBA2: 'PBA2',
+  //siteModal
+  site: 'Sites',
+  siteSubtitle: 'Select From 45 Sites',
+  siteSearch: 'Search Site Name',
 };

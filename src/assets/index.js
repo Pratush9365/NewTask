@@ -24,6 +24,7 @@ export const Images = {
   sortImageArrowSource: require('./images/imagecopy10.png'),
   ArrowIconBack: require('./images/icons8-left-100.png'),
   cloudImage: require('./images/noEmplyee.png'),
+  pannelPump: require('./images/image2.png'),
 };
 export const icons = {
   searchIcon: require('./icons/search.png'),

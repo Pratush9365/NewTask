@@ -13,7 +13,7 @@ import {Images, icons} from '../../assets';
 import styles from './styles';
 import Toast from 'react-native-toast-message';
 import {useDispatch} from 'react-redux';
-import {Authentication, Email, Password} from '../../redux/slice/login';
+import {authentication} from '../../redux/slice/login';
 import strings from '../../utils/strings';
 import {screenNames} from '../../utils/screenNames';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -40,7 +40,7 @@ export default function LoginScreen({navigation}) {
     setloading(true);
 
     try {
-      const result = await dispatch(Authentication({email, password})).unwrap();
+      const result = await dispatch(authentication({email, password})).unwrap();
       if (result && result.access_token) {
         Toast.show({
           type: 'success',
@@ -54,7 +54,7 @@ export default function LoginScreen({navigation}) {
         Toast.show({
           type: 'error',
           text1: strings.errorTitle,
-          text2: error?.message,
+          text2: strings.errorMessage1,
           topOffset: 40,
           position: 'top',
         });

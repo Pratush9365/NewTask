@@ -1,15 +1,23 @@
-import { View, Text, TouchableOpacity, Image, TextInput, FlatList, StyleSheet } from 'react-native';
-import Modal from "react-native-modal";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  TextInput,
+  FlatList,
+} from 'react-native';
+import Modal from 'react-native-modal';
 import styles from './styles';
-import { icons, Images } from '../../../assets';
+import {icons, Images} from '../../../assets';
+import strings from '../../../utils/strings';
 
-const SiteModal = ({
+const siteModal = ({
   modalVisible,
   setModalVisible,
   searchText,
   setSearchText,
   filteredSites,
-  setSubtitle
+  setSubtitle,
 }) => {
   return (
     <Modal
@@ -20,27 +28,29 @@ const SiteModal = ({
       backdropColor="rgba(8,16,23,1)"
       onBackdropPress={() => setModalVisible(false)}
       useNativeDriver
-      style={{ margin: 0, justifyContent: "flex-end" }}
-    >
+      style={{margin: 0, justifyContent: 'flex-end'}}>
       <View style={styles.modalContainer}>
-     
         <View style={styles.modalHeader}>
           <View style={styles.modalTitleSection}>
-            <Text style={styles.modalTitle}>Sites</Text>
-            <Text style={styles.modalSubtitle}>Select From 45 Sites</Text>
+            <Text style={styles.modalTitle}>{strings.site}</Text>
+            <Text style={styles.modalSubtitle}>{strings.siteSubtitle}</Text>
           </View>
 
-          <TouchableOpacity style={styles.closeButton} onPress={() => setModalVisible(false)}>
+          <TouchableOpacity
+            style={styles.closeButton}
+            onPress={() => setModalVisible(false)}>
             <Image style={styles.closeButtonIcon} source={Images.crossImage} />
           </TouchableOpacity>
         </View>
 
-    
         <View style={styles.searchBarContainer}>
           <View style={styles.searchInputContainer}>
-            <Image source={icons.searchIconWaterSource} style={styles.searchIcon} />
+            <Image
+              source={icons.searchIconWaterSource}
+              style={styles.searchIcon}
+            />
             <TextInput
-              placeholder="Search Site Name"
+              placeholder={strings.siteSearch}
               value={searchText}
               onChangeText={setSearchText}
               style={styles.searchInput}
@@ -48,17 +58,15 @@ const SiteModal = ({
           </View>
         </View>
 
-   
         <FlatList
           data={filteredSites}
-          renderItem={({ item }) => (
+          renderItem={({item}) => (
             <TouchableOpacity
               style={styles.siteItem}
               onPress={() => {
                 setSubtitle(item);
                 setModalVisible(false);
-              }}
-            >
+              }}>
               <Text style={styles.siteItemText}>{item}</Text>
             </TouchableOpacity>
           )}
@@ -69,5 +77,4 @@ const SiteModal = ({
   );
 };
 
-export default SiteModal;
-
+export default siteModal;

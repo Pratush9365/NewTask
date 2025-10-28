@@ -79,7 +79,7 @@ export default function ForgotPassword({navigation}) {
       </TouchableOpacity>
 
       <Modal
-        style={{justifyContent: 'flex-end', margin: 0}}
+        style={styles.modalHeader}
         animationIn="slideInUp"
         animationOut="slideOutDown"
         isVisible={Modalvisible}

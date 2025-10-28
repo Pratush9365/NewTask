@@ -28,7 +28,7 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import signInWithEmail from '../../../service/api/loginAPI';
 
-export const Authentication = createAsyncThunk(
+export const authentication = createAsyncThunk(
   'auth/loginUser',
   async (userAuthentication, {rejectWithValue}) => {
     try {
@@ -40,8 +40,8 @@ export const Authentication = createAsyncThunk(
   },
 );
 
-const AuthenticationSlice = createSlice({
-  name: 'Authentication',
+const authenticationSlice = createSlice({
+  name: 'authentication',
   initialState: {
     token: null,
     loading: 'idle',
@@ -56,22 +56,22 @@ const AuthenticationSlice = createSlice({
   },
   extraReducers: builder => {
     builder
-      .addCase(Authentication.pending, state => {
+      .addCase(authentication.pending, state => {
         state.loading = 'loading';
       })
-      .addCase(Authentication.fulfilled, (state, action) => {
+      .addCase(authentication.fulfilled, (state, action) => {
         state.loading = 'succeeded';
 
         if (action.payload) {
           state.token = action.payload.access_token;
         }
       })
-      .addCase(Authentication.rejected, (state, action) => {
+      .addCase(authentication.rejected, (state, action) => {
         state.loading = 'failed';
         state.error = action.payload || 'Login failed';
       });
   },
 });
 
-export const {logout} = AuthenticationSlice.actions;
-export default AuthenticationSlice.reducer;
+export const {logout} = authenticationSlice.actions;
+export default authenticationSlice.reducer;

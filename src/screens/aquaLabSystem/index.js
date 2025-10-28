@@ -2,10 +2,11 @@ import {StyleSheet, Text, View} from 'react-native';
 import {useState} from 'react';
 import CustomHeader from '../../headerCustomComponent';
 import strings from '../../utils/strings';
-import {icons} from '../../assets';
+import {icons, Images} from '../../assets';
 import SiteModal from '../../components/modals/siteModal';
 import fonts from '../../assets/fonts';
 import colors from '../../utils/colors';
+import {FlatList} from 'react-native-gesture-handler';
 
 const AquaLabSystem = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -16,6 +17,25 @@ const AquaLabSystem = ({navigation}) => {
   const filteredSites = sites.filter(site =>
     site.toLowerCase().includes(searchText.toLowerCase()),
   );
+
+  const renderItem = () => {
+    return (
+      <View style={{backgroundColor: colors.white, marginHorizontal: 16}}>
+        <View style={{marginVertical: 18, marginHorizontal: 16}}>
+          <View
+            style={{
+              width: 48,
+              height: 48,
+              borderRadius: 36,
+              backgroundColor: colors.MediumBlue,
+            }}>
+            <Image source={Images.pannelPump} />
+          </View>
+          <Text>Pannel 1</Text>
+        </View>
+      </View>
+    );
+  };
 
   return (
     <View>
@@ -39,6 +59,8 @@ const AquaLabSystem = ({navigation}) => {
           12 Aqua-Lab Pannel & 6 Pumps Configured
         </Text>
       </View>
+
+      <FlatList />
       <SiteModal
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}

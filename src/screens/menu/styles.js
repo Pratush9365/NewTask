@@ -1,5 +1,7 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 import colors from '../../utils/colors';
+
+const dimension = Dimensions.get('screen');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -16,7 +18,7 @@ const styles = StyleSheet.create({
   box: {
     backgroundColor: colors.MediumBlue,
     width: '45%',
-    height: 120,
+    height: 0.16 * dimension.height,
     borderRadius: 12,
     marginVertical: 10,
     justifyContent: 'center',
