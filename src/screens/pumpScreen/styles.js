@@ -4,7 +4,6 @@ import {vh, vw} from '../../utils/diamensions';
 import fonts from '../../assets/fonts';
 
 const styles = StyleSheet.create({
-  // TAB BAR
   tabBar: {
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -25,7 +24,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 
-  // MAIN CONTAINER
   mainContainer: {
     flex: 1,
     backgroundColor: colors.whiteF3,
@@ -54,7 +52,6 @@ const styles = StyleSheet.create({
     marginRight: vw(8),
   },
 
-  // CARD CONTAINER
   cardContainer: {
     paddingVertical: vh(20),
     paddingHorizontal: vw(20),
@@ -64,7 +61,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
   },
 
-  // FLATLIST ITEMS
   listRow: {
     flexDirection: 'row',
   },
@@ -93,10 +89,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 
-  // SEPARATOR
   separator: {
     borderBottomWidth: 1,
-    borderColor: '#EDEFF1',
+    borderColor: colors.whiteF1,
     marginVertical: vh(16),
   },
 });

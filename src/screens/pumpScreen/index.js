@@ -152,7 +152,6 @@ const PumpScreen = ({route}) => {
         onBackPress={() => navigation.goBack()}
       />
 
-      {/* Tab Bar */}
       <View style={styles.tabBar}>
         {['Status', 'Summary'].map(tab => (
           <TouchableOpacity
@@ -167,7 +166,6 @@ const PumpScreen = ({route}) => {
         ))}
       </View>
 
-      {/* Main Content */}
       <View style={styles.mainContainer}>
         <View style={styles.headerRow}>
           <Text style={styles.headerText}>{`${item1} Statitics`}</Text>
