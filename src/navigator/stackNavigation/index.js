@@ -8,6 +8,7 @@ import ForgotPassword from '../../screens/forgotPassword';
 import ResetPassword from '../../screens/resetPassword';
 import AddWaterSource from '../../screens/addWaterSource';
 import ProductDetailsScreen from '../../screens/productDetail';
+import PumpScreen from '../../screens/pumpScreen';
 
 const Stack = createStackNavigator();
 export default function StackNavgation() {
@@ -28,6 +29,8 @@ export default function StackNavgation() {
         name={screenNames.ADD_WATER_SOURCE}
         component={AddWaterSource}
       />
+      <Stack.Screen name={screenNames.PUMP} component={PumpScreen} />
+
       <Stack.Screen
         name={screenNames.DETAILS_SCREEN}
         component={ProductDetailsScreen}

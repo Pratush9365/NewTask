@@ -1,44 +1,79 @@
-import {StyleSheet, Text, View} from 'react-native';
-import {useState} from 'react';
+import {
+  Text,
+  View,
+  FlatList,
+  Image,
+  ActivityIndicator,
+  Pressable,
+} from 'react-native';
+import {useEffect, useState} from 'react';
 import CustomHeader from '../../headerCustomComponent';
 import strings from '../../utils/strings';
 import {icons, Images} from '../../assets';
 import SiteModal from '../../components/modals/siteModal';
-import fonts from '../../assets/fonts';
 import colors from '../../utils/colors';
-import {FlatList} from 'react-native-gesture-handler';
+import getLocationComponents from '../../service/aquaLab';
+import styles from './styles';
+import {screenNames} from '../../utils/screenNames';
 
 const AquaLabSystem = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [subtitle, setSubtitle] = useState('PBA2');
   const [searchText, setSearchText] = useState('');
+  const [aquaLabData, setAquaLabData] = useState({});
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const sites = [strings.siteOne, strings.siteTwo, strings.siteThree];
   const filteredSites = sites.filter(site =>
     site.toLowerCase().includes(searchText.toLowerCase()),
   );
 
-  const renderItem = () => {
-    return (
-      <View style={{backgroundColor: colors.white, marginHorizontal: 16}}>
-        <View style={{marginVertical: 18, marginHorizontal: 16}}>
-          <View
-            style={{
-              width: 48,
-              height: 48,
-              borderRadius: 36,
-              backgroundColor: colors.MediumBlue,
-            }}>
-            <Image source={Images.pannelPump} />
-          </View>
-          <Text>Pannel 1</Text>
-        </View>
-      </View>
-    );
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await getLocationComponents({
+        site_id: '8a637256-ed45-44ba-a47f-2be2863479f4',
+      });
+      setAquaLabData(response?.components);
+      setLoading(false);
+    } catch (error) {
+      setError(error.message);
+      setLoading(false);
+    }
   };
 
+  const renderItem = ({item}) => {
+    const isPump = item.name.toLowerCase().includes('pump');
+    const backgroundColor = isPump ? colors.green3DD : colors.MediumBlue;
+    const imageSource = isPump ? Images.pump : Images.pannel;
+
+    const handlePress = () => {
+      if (isPump) {
+        navigation.navigate(screenNames.PUMP, {item1: item.name});
+      }
+    };
+
+    return (
+      <Pressable onPress={handlePress}>
+        <View style={styles.card}>
+          <View style={styles.cardInner}>
+            <View style={[styles.imageWrapper, {backgroundColor}]}>
+              <Image source={imageSource} style={styles.image} />
+            </View>
+            <Text style={styles.itemName}>{item.name}</Text>
+            <View style={{flex: 1}} />
+            <Image source={Images.chevranRight} style={styles.image} />
+          </View>
+        </View>
+      </Pressable>
+    );
+  };
   return (
-    <View>
+    <View style={styles.container}>
       <CustomHeader
         title={strings.AquaLabSystem}
         subtitle={subtitle}
@@ -48,19 +83,31 @@ const AquaLabSystem = ({navigation}) => {
         onSubtitlePress={() => setModalVisible(true)}
         showIconBackground={true}
       />
+
       <View>
-        <Text
-          style={{
-            marginTop: 20,
-            marginHorizontal: 16,
-            fontFamily: fonts.SEMI,
-            color: colors.gray07D,
-          }}>
+        <Text style={styles.titleText}>
           12 Aqua-Lab Pannel & 6 Pumps Configured
         </Text>
       </View>
 
-      <FlatList />
+      {loading ? (
+        <View style={styles.loaderContainer}>
+          <ActivityIndicator size="large" />
+        </View>
+      ) : error ? (
+        <Text style={styles.errorText}>{error}</Text>
+      ) : (
+        <View style={styles.flatListContainer}>
+          <FlatList
+            data={aquaLabData}
+            keyExtractor={item => item.id.toString()}
+            renderItem={renderItem}
+            showsVerticalScrollIndicator={false}
+            ItemSeparatorComponent={() => <View style={styles.separator} />}
+          />
+        </View>
+      )}
+
       <SiteModal
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
@@ -74,5 +121,3 @@ const AquaLabSystem = ({navigation}) => {
 };
 
 export default AquaLabSystem;
-
-const styles = StyleSheet.create({});

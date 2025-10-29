@@ -1333,6 +1333,30 @@ PODS:
     - React-jsiexecutor
     - React-RCTFBReactNativeSpec
     - ReactCommon/turbomodule/core
+  - react-native-pager-view (6.9.1):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.11.18.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-hermes
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - react-native-safe-area-context (5.6.1):
     - DoubleConversion
     - glog
@@ -1757,6 +1781,8 @@ PODS:
   - RNCCheckbox (0.5.20):
     - BEMCheckBox (~> 1.4)
     - React-Core
+  - RNDeviceInfo (14.1.1):
+    - React-Core
   - RNGestureHandler (2.28.0):
     - DoubleConversion
     - glog
@@ -2027,6 +2053,7 @@ DEPENDENCIES:
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
   - React-microtasksnativemodule (from `../node_modules/react-native/ReactCommon/react/nativemodule/microtasks`)
+  - react-native-pager-view (from `../node_modules/react-native-pager-view`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
   - React-oscompat (from `../node_modules/react-native/ReactCommon/oscompat`)
@@ -2061,6 +2088,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - "RNCCheckbox (from `../node_modules/@react-native-community/checkbox`)"
+  - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -2150,6 +2178,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   React-microtasksnativemodule:
     :path: "../node_modules/react-native/ReactCommon/react/nativemodule/microtasks"
+  react-native-pager-view:
+    :path: "../node_modules/react-native-pager-view"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   React-NativeModulesApple:
@@ -2218,6 +2248,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-async-storage/async-storage"
   RNCCheckbox:
     :path: "../node_modules/@react-native-community/checkbox"
+  RNDeviceInfo:
+    :path: "../node_modules/react-native-device-info"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNReanimated:
@@ -2269,6 +2301,7 @@ SPEC CHECKSUMS:
   React-logger: a5edba66e28edd1ef973971a2ec5d531eb8621ea
   React-Mapbuffer: 2ef4d104cd7426fdbe4dbb283fcab8235ea92cc8
   React-microtasksnativemodule: a2d19a42269e02a7a86ab1c51fa3a4fa63be00ba
+  react-native-pager-view: f79b095ad2f207028f17626dd7aaf8411c42accc
   react-native-safe-area-context: 895c49ee2613865f90318789be89a8e286fe7b69
   React-NativeModulesApple: f8c91c74d5d223944c7b7fdeb0695d8ee73f899c
   React-oscompat: faff1df234d57a7368b56e9642222dde9eb9f422
@@ -2303,6 +2336,7 @@ SPEC CHECKSUMS:
   ReactCommon: 1257efa9d0b07517d8b79bb4055eaefac1204807
   RNCAsyncStorage: a1c8cc8a99c32de1244a9cf707bf9d83d0de0f71
   RNCCheckbox: 33b44487ca8008394ce658cc32b26eab04f426ef
+  RNDeviceInfo: bcce8752b5043a623fe3c26789679b473f705d3c
   RNGestureHandler: 0397fea67f39d5a2d17fcf4a028e206f7ba098ba
   RNReanimated: e8e6ad352b23bf457cb569ae44733a5817deb45d
   RNScreens: 824a29c178e253fe8b08fb0b2903195d35f724f2
@@ -2312,4 +2346,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: be6ca2413d5c168d62663646e0eeba3a5e1ddbfe
 
-COCOAPODS: 1.16.2
+COCOAPODS: 1.15.2

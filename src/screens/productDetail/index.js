@@ -8,7 +8,6 @@ export default function ProductDetailsScreen({route}) {
   const {item1, cartItems} = route.params;
   const cartcount = cartItems.find(item => item.id === item1.id)?.quantity || 0;
   const navigation = useNavigation();
-
   const imageSection = {
     type: 'Image',
     source: 'Image',

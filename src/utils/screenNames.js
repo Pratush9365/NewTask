@@ -28,4 +28,5 @@ export const screenNames = {
   BOTTOM_TAB_CONNECT: 'bottomTabConnect',
   PRODUCT_DETAILS: 'Details',
   AQUA_LAB_SYSTEAM: 'Aqua-Lab System',
+  PUMP: 'pumpScreen',
 };

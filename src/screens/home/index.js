@@ -9,7 +9,6 @@ import {
   Pressable,
 } from 'react-native';
 import {useState, useRef} from 'react';
-import {DrawerActions, useNavigation} from '@react-navigation/native';
 import styles from './styles';
 import FilterModal from './modal';
 import {Washbook, Washes, giftCards, memberships} from './utils/staticData';

@@ -1,3 +1,5 @@
+import PumpScreen from '../screens/pumpScreen';
+
 export default {
   screenTitle: 'Water Source Confi...',
   defaultSubtitle: 'PBA1', // fix krna Bhulna mt
@@ -146,4 +148,6 @@ export default {
   site: 'Sites',
   siteSubtitle: 'Select From 45 Sites',
   siteSearch: 'Search Site Name',
+  //pumpScreen
+  pump: 'PUMP',
 };

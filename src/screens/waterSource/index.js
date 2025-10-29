@@ -67,6 +67,7 @@ const WaterSourceScreen = () => {
         site_id: '42528f47-b0c5-4080-ae5a-069fda791a3f',
         sort_by: sortMap[selectedSort] || 3,
       });
+      console.log('fetched', data);
       setWaterTypes(data);
     } catch (err) {
       setError(err.message);

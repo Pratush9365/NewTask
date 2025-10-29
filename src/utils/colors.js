@@ -33,4 +33,9 @@ export default {
   grayA0: '#A0A0A0',
   black: '#0000',
   black777: '#777',
+  green3DD: '#53C3DD',
+  grey4CA: '#BDC4CA',
+  blueEC: '#C3DAEC',
+  greenF7: '#D2F3F7',
+  whiteF1: '#EDEFF1',
 };
