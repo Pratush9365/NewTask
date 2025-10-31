@@ -12,17 +12,20 @@ import strings from '../../utils/strings';
 import {icons, Images} from '../../assets';
 import SiteModal from '../../components/modals/siteModal';
 import colors from '../../utils/colors';
-import getLocationComponents from '../../service/aquaLab';
 import styles from './styles';
 import {screenNames} from '../../utils/screenNames';
+import {getLocationComponents} from '../../service/aquaLab';
+import siteId from '../../service/api/siteId';
 
 const AquaLabSystem = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [subtitle, setSubtitle] = useState('PBA2');
   const [searchText, setSearchText] = useState('');
-  const [aquaLabData, setAquaLabData] = useState({});
+  const [aquaLabData, setAquaLabData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [panelCount, setPannelCount] = useState(null);
+  const [pumpCount, setPumpCount] = useState(null);
 
   const sites = [strings.siteOne, strings.siteTwo, strings.siteThree];
   const filteredSites = sites.filter(site =>
@@ -36,9 +39,17 @@ const AquaLabSystem = ({navigation}) => {
   const fetchData = async () => {
     try {
       const response = await getLocationComponents({
-        site_id: '8a637256-ed45-44ba-a47f-2be2863479f4',
+        site_id: siteId.aquaLabSiteId.site_id,
       });
       setAquaLabData(response?.components);
+      const panelCount =
+        response?.components?.filter(item => item?.type === 'panel-gen4')
+          .length ?? 0;
+      setPannelCount(panelCount);
+      const pumpCount =
+        response?.components?.filter(item => item?.type === 'pump-gen4')
+          .length ?? 0;
+      setPumpCount(pumpCount);
       setLoading(false);
     } catch (error) {
       setError(error.message);
@@ -75,7 +86,7 @@ const AquaLabSystem = ({navigation}) => {
   return (
     <View style={styles.container}>
       <CustomHeader
-        title={strings.AquaLabSystem}
+        title={strings.aquaLabSystem}
         subtitle={subtitle}
         onBackPress={() => navigation.goBack()}
         Image1={icons.notifiactionicon}
@@ -86,7 +97,10 @@ const AquaLabSystem = ({navigation}) => {
 
       <View>
         <Text style={styles.titleText}>
-          12 Aqua-Lab Pannel & 6 Pumps Configured
+          {panelCount}
+          {strings.aquaLabPannel}
+          {pumpCount}
+          {strings.pumpConfigured}
         </Text>
       </View>
 

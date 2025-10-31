@@ -72,5 +72,5 @@ export const icons = {
   clockCheck: require('./icons/image13.png'),
   watch: require('./icons/image14.png'),
   power: require('./icons/image15.png'),
-  // film: require('./icons/image16.png'),
+  film: require('./icons/image16.png'),
 };

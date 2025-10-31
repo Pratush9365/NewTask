@@ -19,4 +19,21 @@ const getLocationComponents = async queryParams => {
     );
   }
 };
-export default getLocationComponents;
+const getPumpSummary = async queryParams => {
+  const response = await getApiCall(
+    endpoints.sensing.pumpStatusSummary,
+    queryParams,
+  );
+
+  if (response?.statusCode === 200) {
+    return response?.data;
+  } else {
+    throw new AppError(
+      response?.message ?? 'getPumpSummary get failed',
+      response?.statusCode,
+      response,
+      response?.message,
+    );
+  }
+};
+export {getLocationComponents, getPumpSummary};

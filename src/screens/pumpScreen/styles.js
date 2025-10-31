@@ -12,13 +12,13 @@ const styles = StyleSheet.create({
   tabButton: {
     flex: 1,
     alignItems: 'center',
-    borderBottomWidth: 0,
   },
   activeTabButton: {
     borderBottomWidth: 3,
     borderBottomColor: colors.white,
   },
   tabText: {
+    marginBottom: vh(12),
     color: colors.white,
     fontFamily: fonts.SEMI,
     fontSize: 14,
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     fontFamily: fonts.MEDIUM,
   },
   itemValueContainer: {
-    marginTop: vh(6),
+    marginTop: vh(2),
   },
   itemValue: {
     color: colors.blackf5f,
@@ -93,6 +93,14 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: colors.whiteF1,
     marginVertical: vh(16),
+  },
+  errorText: {
+    textAlign: 'center',
+    color: colors.red,
+  },
+  loaderContainer: {
+    flex: 1,
+    justifyContent: 'center',
   },
 });
 

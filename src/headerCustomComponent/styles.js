@@ -1,27 +1,29 @@
 import {StyleSheet} from 'react-native';
 import colors from '../utils/colors';
 import fonts from '../assets/fonts';
+import {vh, vw} from '../utils/diamensions';
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.MediumBlue,
   },
   leftContainer: {
     flexDirection: 'row',
-    paddingHorizontal: 16,
-    paddingTop: 4,
-    paddingBottom: 20,
+    paddingHorizontal: vw(16),
+    paddingTop: vh(4),
+    paddingBottom: vh(20),
   },
   backButton: {
-    width: 40,
-    height: 40,
-    padding: 10,
+    width: vh(40),
+    height: vh(40),
+    paddingVertical: vh(10),
+    paddingHorizontal: vw(10),
     borderRadius: 8,
     backgroundColor: colors.bluebeff,
     justifyContent: 'center',
     alignItems: 'center',
   },
   titleContainer: {
-    marginHorizontal: 16,
+    marginHorizontal: vw(16),
   },
   title: {
     color: colors.white,
@@ -34,19 +36,19 @@ const styles = StyleSheet.create({
   subtitle: {
     color: colors.whiteFFF,
     fontSize: 13,
-    marginTop: 2,
+    marginTop: vh(2),
   },
   subtitleIcon: {
-    marginLeft: 4,
-    marginTop: 3,
+    marginLeft: vw(4),
+    marginTop: vh(3),
   },
   rightIcons: {
     flexDirection: 'row',
-    marginLeft: 16,
+    marginLeft: vw(16),
   },
   iconButton: {
-    width: 40,
-    height: 40,
+    width: vw(40),
+    height: vh(40),
     padding: 10,
     borderRadius: 8,
     backgroundColor: colors.bluebeff,
@@ -54,17 +56,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   userButton: {
-    marginLeft: 12,
+    marginLeft: vw(12),
   },
   icon: {
-    width: 20,
-    height: 20,
+    width: vw(20),
+    height: vh(20),
     resizeMode: 'contain',
     tintColor: colors.white,
   },
   icon1: {
-    width: 24,
-    height: 24,
+    width: vw(24),
+    height: vh(24),
     resizeMode: 'contain',
     tintColor: colors.white,
   },

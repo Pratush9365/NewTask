@@ -53,7 +53,7 @@ const AddWaterSource = () => {
       }
 
       const payload = {
-        site_id: '42528f47-b0c5-4080-ae5a-069fda791a3f',
+        site_id: siteId.waterSourceSiteId.site_id,
         water_type: {
           id: selectedWaterType?.id,
           name: selectedWaterType?.name,
@@ -102,7 +102,7 @@ const AddWaterSource = () => {
   const fetchWaterTypes = async () => {
     setLoading(true);
     const payload = {
-      site_id: '42528f47-b0c5-4080-ae5a-069fda791a3f',
+      site_id: siteId.waterSourceSiteId.site_id,
     };
     try {
       const response = await getWaterTypeList(payload);

@@ -141,7 +141,7 @@ export default {
   // Menu Screen String
   chemiaclInventory: 'Chemical Inventory',
   waterSource: 'Water Source',
-  AquaLabSystem: 'Aqua-Lab System',
+  aquaLabSystem: 'Aqua-Lab System',
   location: 'Location',
   PBA2: 'PBA2',
   //siteModal
@@ -150,4 +150,9 @@ export default {
   siteSearch: 'Search Site Name',
   //pumpScreen
   pump: 'PUMP',
+  summary: ' Summary',
+  statistics: 'Statistics',
+  //Aqua-Lab System
+  aquaLabPannel: ' Aqua-Lab Pannel & ',
+  pumpConfigured: ' Pumps Configured',
 };

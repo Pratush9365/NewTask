@@ -26,6 +26,7 @@ import SiteModal from '../../components/modals/siteModal/index';
 import styles from '../waterSource/styles';
 import strings from '../../utils/strings';
 import {screenNames} from '../../utils/screenNames';
+import siteId from '../../service/api/siteId';
 
 const WaterSourceScreen = () => {
   const navigation = useNavigation();
@@ -64,10 +65,9 @@ const WaterSourceScreen = () => {
       setLoading(true);
       const sortMap = {asc: 1, desc: 2, recent: 3, oldest: 4};
       const data = await getWaterSourceList({
-        site_id: '42528f47-b0c5-4080-ae5a-069fda791a3f',
+        site_id: siteId.waterSourceSiteId.site_id,
         sort_by: sortMap[selectedSort] || 3,
       });
-      console.log('fetched', data);
       setWaterTypes(data);
     } catch (err) {
       setError(err.message);
@@ -111,7 +111,7 @@ const WaterSourceScreen = () => {
       }
 
       const payload = {
-        site_id: '42528f47-b0c5-4080-ae5a-069fda791a3f',
+        site_id: siteId.waterSourceSiteId.site_id,
         water_type: {id: matchedType.id, name: matchedType.name},
         water_cost: item?.water_cost?.replace(/\$/g, ''),
         water_source_id: item.id,

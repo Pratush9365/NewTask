@@ -22,7 +22,7 @@ const MenuScreen = () => {
         <TouchableOpacity
           style={styles.box}
           onPress={() => navigation.navigate(screenNames.AQUA_LAB_SYSTEAM)}>
-          <Text style={styles.text}>{strings.AquaLabSystem}</Text>
+          <Text style={styles.text}>{strings.aquaLabSystem}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
